@@ -857,9 +857,13 @@
         function openCustomModal() {
             document.getElementById('customModal').style.display = 'flex';
 
+            // Reset custom amount display when opening modal
+            customAmount = "";  // Changed from "0" to empty string
+            document.getElementById('customAmount').textContent = "0";  // Display 0 but store empty string
+
             // Update custom modal price calculation
             const pricePerCoin = calculatePricePerCoin();
-            const initialCustomPrice = (parseInt(customAmount.replace(/,/g, '')) * pricePerCoin).toFixed(2);
+            const initialCustomPrice = (0 * pricePerCoin).toFixed(2);  // Use 0 for initial calculation
             customTotalPrice.textContent = "$ " + initialCustomPrice;
         }
 
@@ -938,21 +942,39 @@
         function formatNumber(num) {
             return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
+        
         function addDigit(digit) {
-            if (customAmount === "99999") {
-                customAmount = "";
+            // If this is the first digit after opening the modal
+            if (customAmount === "") {
+                // Don't add leading zeros except if zero is intentionally entered
+                if (digit === 0 || digit === "000") {
+                    customAmount = "0";
+                } else {
+                    customAmount = digit.toString();
+                }
+            } else if (customAmount === "0") {
+                // If current amount is just "0" and a new digit is added
+                if (digit === 0 || digit === "000") {
+                    // Keep it as "0" if another zero or triple zero is added
+                    customAmount = "0";
+                } else {
+                    // Replace the zero with the new digit
+                    customAmount = digit.toString();
+                }
+            } else {
+                // For all other cases, append the digit
+                const newAmount = customAmount + digit;
+                if (parseInt(newAmount) <= 9999999) {
+                    customAmount = newAmount;
+                }
             }
 
-            const newAmount = customAmount + digit;
-            if (parseInt(newAmount) <= 9999999) {
-                customAmount = newAmount;
-                document.getElementById('customAmount').textContent = formatNumber(customAmount);
+            document.getElementById('customAmount').textContent = formatNumber(customAmount);
 
-                // Update price in custom modal
-                const pricePerCoin = calculatePricePerCoin();
-                const customPrice = (parseInt(newAmount) * pricePerCoin).toFixed(2);
-                customTotalPrice.textContent = "$ " + customPrice;
-            }
+            // Update price in custom modal
+            const pricePerCoin = calculatePricePerCoin();
+            const customPrice = (parseInt(customAmount) * pricePerCoin).toFixed(2);
+            customTotalPrice.textContent = "$ " + customPrice;
         }
 
         function deleteDigit() {
