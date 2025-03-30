@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
             box-sizing: border-box;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
-        
+
         body {
             background-color: #f8f8f8;
             height: 100vh;
@@ -21,7 +22,7 @@
             margin: 0 auto;
             position: relative;
         }
-        
+
         .header {
             display: flex;
             align-items: center;
@@ -32,25 +33,25 @@
             z-index: 100;
             border-bottom: 1px solid #e8e8e8;
         }
-        
+
         .header h1 {
             flex: 1;
             text-align: center;
             font-size: 18px;
             font-weight: 600;
         }
-        
+
         .back-button {
             font-size: 24px;
             cursor: pointer;
         }
-        
+
         .main-content {
             padding: 16px;
             flex: 1;
             background-color: white;
         }
-        
+
         /* Updated profile section */
         .profile-section {
             background-color: white;
@@ -61,7 +62,7 @@
             align-items: center;
             position: relative;
         }
-        
+
         .profile-pic {
             width: 44px;
             height: 44px;
@@ -70,36 +71,36 @@
             overflow: hidden;
             margin-right: 12px;
         }
-        
+
         .profile-info {
             flex: 1;
         }
-        
+
         .username {
             font-size: 16px;
             font-weight: 500;
         }
-        
+
         .coins-count {
             display: flex;
             align-items: center;
             font-size: 14px;
             color: #888;
         }
-        
+
         .dropdown-arrow {
             position: absolute;
             right: 16px;
             font-size: 20px;
             color: #888;
         }
-        
+
         .recharge-label {
             font-size: 16px;
             font-weight: 600;
             margin-bottom: 8px;
         }
-        
+
         .save-notice {
             color: #ff3b5c;
             margin-bottom: 16px;
@@ -107,7 +108,7 @@
             align-items: center;
             font-size: 14px;
         }
-        
+
         .info-icon {
             margin-left: 5px;
             border: 1px solid #544d4e;
@@ -121,14 +122,14 @@
             color: #544d4e;
             cursor: pointer;
         }
-        
+
         .coin-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
             margin-bottom: 20px;
         }
-        
+
         .coin-option {
             border: 1px solid #e8e8e8;
             border-radius: 8px;
@@ -140,15 +141,15 @@
             position: relative;
             transition: all 0.2s;
         }
-        
+
         .coin-option.selected {
             border: 2px solid #ffcc00;
         }
-        
+
         .coin-option.custom {
             justify-content: center;
         }
-        
+
         .coin-amount {
             display: flex;
             align-items: center;
@@ -156,7 +157,7 @@
             font-size: 18px;
             margin-bottom: 4px;
         }
-        
+
         .coin-icon {
             width: 20px;
             height: 20px;
@@ -164,32 +165,32 @@
             border-radius: 50%;
             margin-right: 4px;
         }
-        
+
         .coin-price {
             color: #888;
             font-size: 14px;
         }
-        
+
         .custom-text {
             font-weight: 600;
         }
-        
+
         .custom-subtext {
             color: #888;
             font-size: 12px;
         }
-        
+
         .payment-methods {
             display: flex;
             margin-bottom: 20px;
             font-size: 14px;
             color: #555;
         }
-        
+
         .payment-icon {
             margin-right: 5px;
         }
-        
+
         .total-section {
             display: flex;
             justify-content: space-between;
@@ -202,7 +203,7 @@
         .total-price {
             font-weight: 600;
         }
-        
+
         .footer {
             display: flex;
             justify-content: space-between;
@@ -210,7 +211,7 @@
             background-color: white;
             border-top: 1px solid #e8e8e8;
         }
-        
+
         .recharge-button {
             width: 100%;
             background-color: #ff3b5c;
@@ -236,7 +237,7 @@
             align-items: center;
             z-index: 1000;
         }
-        
+
         .modal-content {
             background-color: white;
             border-radius: 12px;
@@ -245,30 +246,31 @@
             padding: 20px;
             position: relative;
         }
-        
+
         .slide-up {
             animation: slideUp 0.3s ease-out;
             transform-origin: bottom center;
         }
-        
+
         @keyframes slideUp {
             from {
                 transform: translateY(100%);
                 opacity: 0;
             }
+
             to {
                 transform: translateY(0);
                 opacity: 1;
             }
         }
-        
+
         /* Fix for the countdown timer */
         #countdown {
             font-size: 18px;
             font-weight: bold;
             margin-top: 10px;
         }
-        
+
         .close-button {
             position: absolute;
             top: 10px;
@@ -276,29 +278,29 @@
             font-size: 20px;
             cursor: pointer;
         }
-        
+
         .modal-header {
             text-align: center;
             font-size: 18px;
             font-weight: 600;
             margin-bottom: 20px;
         }
-        
+
         .custom-input-section {
             margin-bottom: 20px;
         }
-        
+
         .input-label {
             font-size: 14px;
             margin-bottom: 8px;
             display: flex;
             align-items: center;
         }
-        
+
         .dropdown-icon {
             margin-left: 5px;
         }
-        
+
         .custom-coin-input {
             font-size: 18px;
             font-weight: 600;
@@ -306,13 +308,13 @@
             display: flex;
             align-items: center;
         }
-        
+
         .keypad {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 8px;
         }
-        
+
         .key {
             background-color: #f1f1f2;
             border: none;
@@ -321,57 +323,78 @@
             font-size: 16px;
             cursor: pointer;
         }
-        
+
         /* Order summary modal */
         .order-summary {
             text-align: left;
         }
-        
+
         .summary-row {
             display: flex;
             justify-content: space-between;
             margin-bottom: 12px;
         }
-        
+
         .summary-label {
             color: #888;
         }
-        
+
         .payment-method {
             display: flex;
             align-items: center;
             margin-bottom: 20px;
         }
-        
+
         .card-info {
             margin-left: 10px;
         }
-        
+
         .terms-text {
             font-size: 12px;
             color: #888;
             margin-bottom: 20px;
             line-height: 1.4;
         }
-        
+
         .terms-link {
             font-weight: 600;
             color: black;
             text-decoration: none;
         }
-        
+
+        #customModal {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: hidden;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 20px;
+            /* Add some space from the bottom */
+        }
+
+        #customModal .modal-content {
+            width: 50%;
+            max-width: 350px;
+            border-radius: 12px;
+            position: relative;
+            margin-bottom: 0;
+        }
+
         /* Processing and success modals */
-        .processing-payment, .payment-success {
+        .processing-payment,
+        .payment-success {
             text-align: center;
         }
-        
+
         .loader {
             position: relative;
             width: 80px;
             height: 50px;
             margin: 0 auto 20px;
         }
-        
+
         .tiktok {
             position: absolute;
             width: 50px;
@@ -392,15 +415,19 @@
             0% {
                 left: 0;
             }
+
             25% {
                 transform: scale(1.2);
             }
+
             50% {
                 left: 30px;
             }
+
             75% {
                 transform: scale(0.8);
             }
+
             100% {
                 left: 0;
             }
@@ -410,30 +437,34 @@
             0% {
                 right: 0;
             }
+
             25% {
                 transform: scale(0.8);
             }
+
             50% {
                 right: 30px;
             }
+
             75% {
                 transform: scale(1.2);
             }
+
             100% {
                 right: 0;
             }
         }
-        
+
         .processing-text {
             margin-bottom: 5px;
             font-weight: 600;
         }
-        
+
         .timer {
             color: #888;
             margin-bottom: 20px;
         }
-        
+
         .success-icon {
             width: 60px;
             height: 60px;
@@ -446,17 +477,17 @@
             color: white;
             font-size: 32px;
         }
-        
+
         .success-title {
             font-weight: 600;
             margin-bottom: 10px;
         }
-        
+
         .success-message {
             color: #888;
             margin-bottom: 20px;
         }
-        
+
         .go-back-button {
             background-color: #ff3b5c;
             color: white;
@@ -468,21 +499,23 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Main page -->
     <div class="header">
         <div class="back-button">←</div>
         <h1>Get Coins</h1>
     </div>
-    
+
     <div class="main-content">
         <!-- Updated profile section -->
         <div class="profile-section">
             <div class="profile-pic">
-                <img src="https://via.placeholder.com/44" alt="Profile" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="https://via.placeholder.com/44" alt="Profile"
+                    style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div class="profile-info">
-                <div class="username">shiyam_kalwar</div>
+                <div class="username">Aladin Official</div>
                 <div class="coins-count">
                     <img src="moneda2.png" style="width: 16px; height: 16px; margin-right: 4px;">
                     0
@@ -490,13 +523,13 @@
             </div>
             <div class="dropdown-arrow">▼</div>
         </div>
-        
+
         <div class="recharge-label">Recharge:</div>
         <div class="save-notice">
             Save around 25% with a lower third-party service fee
             <div class="info-icon">i</div>
         </div>
-        
+
         <div class="coin-grid">
             <div class="coin-option" data-coins="70" data-price="0.74" onclick="selectCoinOption(this)">
                 <div class="coin-amount">
@@ -505,7 +538,7 @@
                 </div>
                 <div class="coin-price">$ 0.74</div>
             </div>
-            
+
             <div class="coin-option" data-coins="350" data-price="3.7" onclick="selectCoinOption(this)">
                 <div class="coin-amount">
                     <img src="moneda2.png" style="width: 28px; height: 28px;">
@@ -513,7 +546,7 @@
                 </div>
                 <div class="coin-price">$ 3.7</div>
             </div>
-            
+
             <div class="coin-option" data-coins="700" data-price="7.4" onclick="selectCoinOption(this)">
                 <div class="coin-amount">
                     <img src="moneda2.png" style="width: 28px; height: 28px;">
@@ -521,7 +554,7 @@
                 </div>
                 <div class="coin-price">$ 7.4</div>
             </div>
-            
+
             <div class="coin-option" data-coins="1400" data-price="14.8" onclick="selectCoinOption(this)">
                 <div class="coin-amount">
                     <img src="moneda2.png" style="width: 28px; height: 28px;">
@@ -529,7 +562,7 @@
                 </div>
                 <div class="coin-price">$ 14.8</div>
             </div>
-            
+
             <div class="coin-option" data-coins="3500" data-price="37" onclick="selectCoinOption(this)">
                 <div class="coin-amount">
                     <img src="moneda2.png" style="width: 28px; height: 28px;">
@@ -537,7 +570,7 @@
                 </div>
                 <div class="coin-price">$ 37</div>
             </div>
-            
+
             <div class="coin-option" data-coins="7000" data-price="74" onclick="selectCoinOption(this)">
                 <div class="coin-amount">
                     <img src="moneda2.png" style="width: 28px; height: 28px;">
@@ -545,7 +578,7 @@
                 </div>
                 <div class="coin-price">$ 74</div>
             </div>
-            
+
             <div class="coin-option" data-coins="17500" data-price="185" onclick="selectCoinOption(this)">
                 <div class="coin-amount">
                     <img src="moneda2.png" style="width: 28px; height: 28px;">
@@ -553,7 +586,7 @@
                 </div>
                 <div class="coin-price">$ 185</div>
             </div>
-            
+
             <div class="coin-option custom" data-coins="custom" onclick="openCustomModal()">
                 <div class="coin-amount">
                     <img src="moneda2.png" style="width: 28px; height: 28px;">
@@ -562,35 +595,36 @@
                 <div class="custom-subtext">Large amount supported</div>
             </div>
         </div>
-        
+
         <div class="payment-methods">
-            <img src="images.png" style="width: 28px; height: 28px; margin-right: 10px;"> 
+            <img src="images.png" style="width: 28px; height: 28px; margin-right: 10px;">
             <img src="images (1).png" style="width: 20px; height: 20px; margin-right: 10px; margin-top: 5px;">
-            <img src="American_Express_logo.png" style="width: 20px; height: 20px; margin-right: 10px; margin-top: 5px;">
+            <img src="American_Express_logo.png"
+                style="width: 20px; height: 20px; margin-right: 10px; margin-top: 5px;">
             <img src="images.jpeg" style="width: 20px; height: 20px; margin-right: 10px; margin-top: 5px;">
-            
+
             <img src="png.png" style="width: 20px; height: 20px; margin-right: 10px; margin-top: 5px;">
             <img src="Maestro-logo.png" style="width: 20px; height: 20px; margin-right: 10px; margin-top: 5px;">
             <img src="paypal.png" style="width: 20px; height: 30px; margin-bottom: 3px;">
         </div>
-        
-        
+
+
         <div class="total-section">
             <div class="total-label">Total</div>
             <div class="total-price">$ 74</div>
         </div>
     </div>
-    
+
     <div class="footer">
         <button class="recharge-button" onclick="openOrderSummaryModal()">Recharge</button>
     </div>
-    
+
     <!-- Custom amount modal -->
     <div class="modal" id="customModal">
         <div class="modal-content slide-up">
             <div class="close-button" onclick="closeModal('customModal')">×</div>
             <div class="modal-header">Custom</div>
-            
+
             <div class="custom-input-section">
                 <div class="input-label">
                     Number of Coins <span class="dropdown-icon">▼</span>
@@ -600,7 +634,7 @@
                     <span id="customAmount">99999</span>
                 </div>
             </div>
-            
+
             <div class="keypad">
                 <button class="key" onclick="addDigit(1)">1</button>
                 <button class="key" onclick="addDigit(2)">2</button>
@@ -615,55 +649,58 @@
                 <button class="key" onclick="addDigit(9)">9</button>
                 <button class="key" onclick="addDigit(0)">0</button>
             </div>
-            
+
             <div class="total-section">
                 <div class="total-label">Total</div>
                 <div class="total-price">$</div>
             </div>
-            
-            <button class="recharge-button" onclick="confirmCustomAmount()">Recharge</button>
+
+            <button class="recharge-button" onclick="openOrderSummaryModal()">Recharge</button>
         </div>
     </div>
-    
+
     <!-- Order summary modal -->
     <div class="modal" id="orderSummaryModal">
         <div class="modal-content slide-up">
             <div class="close-button" onclick="closeModal('orderSummaryModal')">×</div>
             <div class="modal-header">Order summary</div>
-            
+
             <div class="order-summary">
                 <div class="summary-row">
                     <div class="summary-label">Account</div>
                     <div>shiyam_kalwar</div>
                 </div>
-                
+
                 <div class="summary-row" id="orderCoinsRow">
                     <div id="orderCoinsAmount">70 Coins</div>
                     <div id="orderCoinsPrice">$ 106670</div>
                 </div>
-                
+
                 <div class="summary-row">
                     <div class="summary-label">Total</div>
                     <div id="orderTotalPrice">$ 106670</div>
                 </div>
-                
+
                 <div class="payment-method">
-                    <img src="images.png" style="width: 28px; height: 28px;"> 
+                    <img src="images.png" style="width: 28px; height: 28px;">
                     <div class="card-info">******6422</div>
                 </div>
-                
+
                 <div class="terms-text">
-                    By clicking "Pay now", you agree to our <span class="terms-link">Terms of Purchase for Coins</span>. By using any amount of Coins within 14 days after clicking "Pay Now," you acknowledge and confirm that you will no longer be eligible for a refund of this order.
-                    
+                    By clicking "Pay now", you agree to our <span class="terms-link">Terms of Purchase for Coins</span>.
+                    By using any amount of Coins within 14 days after clicking "Pay Now," you acknowledge and confirm
+                    that you will no longer be eligible for a refund of this order.
+
                     <br><br>
-                    To assess your tax rate in accordance with our <span class="terms-link">Privacy Policy</span>, TikTok detected that your location is <br>New York, New York, New York, United States
+                    To assess your tax rate in accordance with our <span class="terms-link">Privacy Policy</span>,
+                    TikTok detected that your location is <br>New York, New York, New York, United States
                 </div>
-                
+
                 <button class="recharge-button" onclick="openProcessingModal()">Pay now</button>
             </div>
         </div>
     </div>
-    
+
     <!-- Processing payment modal -->
     <div class="modal" id="processingModal">
         <div class="modal-content slide-up">
@@ -678,43 +715,44 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Payment success modal -->
     <div class="modal" id="successModal">
         <div class="modal-content slide-up">
             <div class="payment-success">
                 <div class="success-icon">✓</div>
                 <div class="success-title">Payment Completed</div>
-                <div class="success-message" id="successMessage">You recharged 9999999 Coins. You can use Coins to send virtual Gifts.</div>
+                <div class="success-message" id="successMessage">You recharged 9999999 Coins. You can use Coins to send
+                    virtual Gifts.</div>
                 <button class="go-back-button" onclick="closeAllModals()">Go back</button>
             </div>
         </div>
     </div>
-    
+
     <script>
         let selectedCoins = "7000";  // Default to 7000 coins selected
         let customAmount = "99999";
         const totalPrice = document.querySelector('.total-price');
         const customTotalPrice = document.querySelector('#customModal .total-price');
-        
+
         // Calculate price per coin based on existing options
         function calculatePricePerCoin() {
             // Using the 3500 coins option as a reference
             return 37 / 3500; // price per coin
         }
-        
+
         function selectCoinOption(element) {
             // Remove selected class from all options
             document.querySelectorAll('.coin-option').forEach(option => {
                 option.classList.remove('selected');
             });
-            
+
             // Add selected class to clicked option
             element.classList.add('selected');
-            
+
             // Update selected coins
             selectedCoins = element.dataset.coins;
-            
+
             // Update total price
             if (selectedCoins === "custom") {
                 const pricePerCoin = calculatePricePerCoin();
@@ -723,30 +761,30 @@
             } else {
                 totalPrice.textContent = "$ " + element.dataset.price;
             }
-            
+
             // Update success message
             updateSuccessMessage();
         }
-        
+
         // Initialize custom amount price calculation when modal opens
         function openCustomModal() {
             document.getElementById('customModal').style.display = 'flex';
-            
+
             // Update custom modal price calculation
             const pricePerCoin = calculatePricePerCoin();
             const initialCustomPrice = (parseInt(customAmount.replace(/,/g, '')) * pricePerCoin).toFixed(2);
             customTotalPrice.textContent = "$ " + initialCustomPrice;
         }
-        
+
         function openOrderSummaryModal() {
             const modal = document.getElementById('orderSummaryModal');
             modal.style.display = 'flex';
-            
+
             // Update order summary with current selection
             const orderCoinsAmount = document.getElementById('orderCoinsAmount');
             const orderCoinsPrice = document.getElementById('orderCoinsPrice');
             const orderTotalPrice = document.getElementById('orderTotalPrice');
-            
+
             if (selectedCoins === "custom") {
                 orderCoinsAmount.textContent = formatNumber(customAmount) + " Coins";
                 const pricePerCoin = calculatePricePerCoin();
@@ -760,61 +798,61 @@
                 orderTotalPrice.textContent = "$ " + selectedOption.dataset.price;
             }
         }
-        
+
         function openProcessingModal() {
             closeModal('orderSummaryModal');
             document.getElementById('processingModal').style.display = 'flex';
-            
+
             // Set initial timer value - starts at 05:00
             const countdownElement = document.getElementById('countdown');
             countdownElement.textContent = "05:00";
-            
+
             // Countdown values - decrease by 1 second each time
             const countdownValues = ["04:59", "04:58", "04:57", "04:56", "04:55"];
             let index = 0;
-            
+
             // Start countdown timer - runs for exactly 5 seconds
-            const timer = setInterval(function() {
+            const timer = setInterval(function () {
                 countdownElement.textContent = countdownValues[index];
                 index++;
-                
+
                 if (index >= countdownValues.length) {
                     clearInterval(timer);
-                    setTimeout(function() {
+                    setTimeout(function () {
                         closeModal('processingModal');
                         document.getElementById('successModal').style.display = 'flex';
                     }, 500);
                 }
             }, 1000);
         }
-        
+
         function closeModal(modalId) {
             document.getElementById(modalId).style.display = 'none';
         }
-        
+
         function closeAllModals() {
             document.querySelectorAll('.modal').forEach(modal => {
                 modal.style.display = 'none';
             });
         }
-        
+
         function addDigit(digit) {
             if (customAmount === "99999") {
                 customAmount = "";
             }
-            
+
             const newAmount = customAmount + digit;
             if (parseInt(newAmount) <= 9999999) {
                 customAmount = newAmount;
                 document.getElementById('customAmount').textContent = formatNumber(customAmount);
-                
+
                 // Update price in custom modal
                 const pricePerCoin = calculatePricePerCoin();
                 const customPrice = (parseInt(newAmount) * pricePerCoin).toFixed(2);
                 customTotalPrice.textContent = "$ " + customPrice;
             }
         }
-        
+
         function deleteDigit() {
             if (customAmount.length > 0) {
                 customAmount = customAmount.slice(0, -1);
@@ -822,34 +860,34 @@
                     customAmount = "0";
                 }
                 document.getElementById('customAmount').textContent = formatNumber(customAmount);
-                
+
                 // Update price in custom modal
                 const pricePerCoin = calculatePricePerCoin();
                 const customPrice = (parseInt(customAmount) * pricePerCoin).toFixed(2);
                 customTotalPrice.textContent = "$ " + customPrice;
             }
         }
-        
+
         function formatNumber(num) {
             return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
-        
+
         function confirmCustomAmount() {
             closeModal('customModal');
-            
+
             // Calculate price based on custom amount
             const pricePerCoin = calculatePricePerCoin();
             const customPrice = (parseInt(customAmount.replace(/,/g, '')) * pricePerCoin).toFixed(2);
             totalPrice.textContent = "$ " + customPrice;
-            
+
             // Find custom option and select it
             const customOption = document.querySelector('.coin-option.custom');
             selectCoinOption(customOption);
-            
+
             // Update success message with current custom amount
             document.getElementById('successMessage').textContent = `You recharged ${formatNumber(customAmount)} Coins. You can use Coins to send virtual Gifts.`;
         }
-        
+
         // Update success message when selecting a different coin option
         function updateSuccessMessage() {
             if (selectedCoins === "custom") {
@@ -860,16 +898,17 @@
                 document.getElementById('successMessage').textContent = `You recharged ${coinAmount} Coins. You can use Coins to send virtual Gifts.`;
             }
         }
-        
+
         // Initialize with 7000 coins option selected by default
-        window.onload = function() {
+        window.onload = function () {
             // Select the 7000 coins option by default (index 5 in the grid)
             const defaultOption = document.querySelectorAll('.coin-option')[5];
             selectCoinOption(defaultOption);
-            
+
             // Set the total price to match
             totalPrice.textContent = "$ 74";
         };
     </script>
 </body>
+
 </html>
