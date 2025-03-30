@@ -907,7 +907,7 @@
             countdownElement.textContent = "05:00";
 
             // Countdown values - decrease by 1 second each time
-            const countdownValues = ["04:59", "04:58", "04:57", "04:56", "04:55"];
+            const countdownValues = ["04:59", "04:58", "04:57"];
             let index = 0;
 
             // Start countdown timer - runs for exactly 5 seconds
@@ -920,7 +920,7 @@
                     setTimeout(function () {
                         closeModal('processingModal');
                         document.getElementById('successModal').style.display = 'flex';
-                    }, 500);
+                    }, 300);
                 }
             }, 1000);
         }
