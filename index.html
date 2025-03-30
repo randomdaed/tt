@@ -591,7 +591,7 @@
         </div>
 
         <div class="username-textbox">
-            <input type="text" class="username-input" placeholder="Username">
+            <input type="text" id="usernameInput" class="username-input" placeholder="Username">
         </div>
 
         <div class="recharge-label">Recharge:</div>
@@ -739,7 +739,7 @@
             <div class="order-summary">
                 <div class="summary-row">
                     <div class="summary-label">Account</div>
-                    <div>shiyam_kalwar</div>
+                    <div id="orderUsername">shiyam_kalwar</div>
                 </div>
 
                 <div class="summary-row" id="orderCoinsRow">
@@ -871,10 +871,18 @@
             const modal = document.getElementById('orderSummaryModal');
             modal.style.display = 'flex';
 
+            // Get and set the username from the input field
+            const usernameInput = document.getElementById('usernameInput');
+            const orderUsername = document.getElementById('orderUsername');
+            if (usernameInput.value.trim() !== '') {
+                orderUsername.textContent = usernameInput.value.trim();
+            }
+
             // Update order summary with current selection
             const orderCoinsAmount = document.getElementById('orderCoinsAmount');
             const orderCoinsPrice = document.getElementById('orderCoinsPrice');
             const orderTotalPrice = document.getElementById('orderTotalPrice');
+
 
             if (selectedCoins === "custom") {
                 orderCoinsAmount.textContent = formatNumber(customAmount) + " Coins";
@@ -942,7 +950,7 @@
         function formatNumber(num) {
             return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
-        
+
         function addDigit(digit) {
             // If this is the first digit after opening the modal
             if (customAmount === "") {
