@@ -322,6 +322,33 @@
             padding: 12px;
             font-size: 16px;
             cursor: pointer;
+            -webkit-appearance: none;
+            /* Removes iOS default styling */
+            -moz-appearance: none;
+            appearance: none;
+            color: #000;
+            /* Explicitly set text color */
+        }
+
+        /* Fix for iOS focus/tap state */
+        .key:focus,
+        .key:active,
+        .key:hover {
+            background-color: #e5e5e5;
+            /* Slightly darker on interaction */
+            color: #000;
+            /* Maintain text color on interaction */
+            outline: none;
+            /* Remove focus outline */
+            -webkit-tap-highlight-color: transparent;
+            /* Remove tap highlight */
+        }
+
+        /* Additional fix for any OS default button styling */
+        button {
+            color: inherit;
+            /* Inherit text color */
+            -webkit-tap-highlight-color: transparent;
         }
 
         /* Order summary modal */
@@ -537,7 +564,7 @@
                 <img src="tiktok.png" alt="Profile" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div class="profile-info">
-                <div class="username">Aladin Official</div>
+                <div class="username">Recharge</div>
                 <div class="coins-count">
                     <img src="moneda2.png" style="width: 16px; height: 16px; margin-right: 4px;">
                     0
@@ -681,7 +708,8 @@
                 <div class="total-price">$</div>
             </div>
 
-            <button class="recharge-button" onclick="openOrderSummaryModal()">Recharge</button>
+            <!-- Change this line in the custom modal -->
+            <button class="recharge-button" onclick="confirmCustomAmount()">Recharge</button>
         </div>
     </div>
 
@@ -763,6 +791,19 @@
         let customAmount = "99999";
         const totalPrice = document.querySelector('.total-price');
         const customTotalPrice = document.querySelector('#customModal .total-price');
+
+        function openCustomModal() {
+            document.getElementById('customModal').style.display = 'flex';
+
+            // Reset custom amount display when opening modal
+            customAmount = "0";
+            document.getElementById('customAmount').textContent = customAmount;
+
+            // Update custom modal price calculation
+            const pricePerCoin = calculatePricePerCoin();
+            const initialCustomPrice = (parseInt(customAmount) * pricePerCoin).toFixed(2);
+            customTotalPrice.textContent = "$ " + initialCustomPrice;
+        }
 
         // Calculate price per coin based on existing options
         function calculatePricePerCoin() {
@@ -919,17 +960,20 @@
         function confirmCustomAmount() {
             closeModal('customModal');
 
-            // Calculate price based on custom amount
-            const pricePerCoin = calculatePricePerCoin();
-            const customPrice = (parseInt(customAmount.replace(/,/g, '')) * pricePerCoin).toFixed(2);
-            totalPrice.textContent = "$ " + customPrice;
-
-            // Find custom option and select it
+            // Select the custom option
             const customOption = document.querySelector('.coin-option.custom');
             selectCoinOption(customOption);
 
-            // Update success message with current custom amount
-            document.getElementById('successMessage').textContent = `You recharged ${formatNumber(customAmount)} Coins. You can use Coins to send virtual Gifts.`;
+            // Set selected coins to the custom amount
+            selectedCoins = "custom";
+
+            // Calculate price based on custom amount
+            const pricePerCoin = calculatePricePerCoin();
+            const customPrice = (parseInt(customAmount) * pricePerCoin).toFixed(2);
+            totalPrice.textContent = "$ " + customPrice;
+
+            // Open order summary after confirming custom amount
+            openOrderSummaryModal();
         }
 
         // Update success message when selecting a different coin option
